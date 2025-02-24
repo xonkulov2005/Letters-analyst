@@ -6,7 +6,7 @@ textarea.addEventListener("input", () => {
   const elements = textarea.value.split("");
 
   elements.forEach((el) => {
-    const item = elementsCounter.find((e) => Object.keys(e)[0] === el);
+    const item = elementsCounter.find((e) => Object.keys(e)[0] == el);
     if (item) {
       item[el] += 1;
     } else {
@@ -36,7 +36,7 @@ textarea.addEventListener("input", () => {
 
     spanChar.textContent = key;
     spanCount.textContent = el[key];
-    spanPercent.textContent = `${percentage}%`;
+    spanPercent.textContent = `(${percentage}%)`;
 
     result.classList.add("result");
     result.append(spanChar, spanCount, spanPercent);
